@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const meeting_1 = require("../controllers/meeting");
+const error_handler_1 = require("../utils/error_handler");
+// import authMiddleware from "../middlewares/auth";
+// import adminMiddleware from "../middlewares/admin";
+const meetRoutes = (0, express_1.Router)();
+meetRoutes.post("/", (0, error_handler_1.errorHandler)(meeting_1.meeting));
+exports.default = meetRoutes;
